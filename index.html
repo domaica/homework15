@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard Biodiversity-DOMAICA</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <!-- full width jumbotron 12 columns bootstrap -->
+      <div class="col-md-12 jumbotron text-center">
+        <!-- bold font   -->
+        <h1  style=color:navy;><strong>Belly Button Biodiversity Dashboard</strong></h1>
+        <!-- introduced style within html so do not use style.css  -->
+        <h3 style=font-size:25px;>Use the interactive charts below to explore the dataset</h3>
+      </div>
+    </div>
+    <div class="row">
+      <!-- space 3/12 to work with dropdown menu  -->
+      <div class="col-md-3">
+        <div class="well">
+          <h4  style=font-size:25px;><strong>Select SAMPLE:</strong></h4>
+          <!-- onchange attribute acts when the value of the element is changed  -->
+          <select id="selDataset"  style=font-size:18px; onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+             <!-- heading with style elements  -->
+            <h2 class="panel-title" style=font-size:20px;><strong>Demographic Info</strong></h2>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <!-- space for bar plot with 4 columns out of 12 bootstrap  -->
+      <div class="col-md-4">
+        <div id="bar"></div>
+      </div>
+      <!-- space for BONUS gauge plot with 5 columns out of 12 bootstrap  -->
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <!-- space for Bubble chart  with full width 12 columns below  -->
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Break for space after bubble plot so xlabel has some separation from bottom-->
+        <!-- after trying & error. Margins do not work that well in plotly-->
+        <div id="bubble"><br></br></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- call to javascript application code -->
+  <script src="static/js/app.js"></script>
+
+</body>
+
+</html>
